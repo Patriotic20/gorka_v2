@@ -5,17 +5,17 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Settings(BaseSettings):
-    DB_USER: str
-    DB_HOST: str
-    DB_PASSWORD: str
-    DB_PORT : str
-    DB_NAME : str
+    DB_USER: str 
+    DB_HOST: str 
+    DB_PASSWORD: str 
+    DB_PORT: str 
+    DB_NAME: str 
     MODE: str
-    
-    SECRET_KEY : str
+
+    SECRET_KEY: str 
     ACCESS_TOKEN_EXPIRE_MINUTES: int 
     ALGORITHM: str 
-    
+
     @property
     def connection_string(self):
         return (

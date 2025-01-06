@@ -42,7 +42,12 @@ def read(barcode: str, db: Session = Depends(get_db)):
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND, detail="Product not found"
         )
-    return find_product
+    return {
+        "id" : find_product.id,
+        "name" : find_product.name,
+        "barcode" : find_product.barcode,
+        "quantity" : find_product.quantity
+    }
 
 
 @router.put("/update")
